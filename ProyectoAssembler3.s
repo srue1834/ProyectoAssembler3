@@ -5,7 +5,7 @@
 
 main:
 	stmfd sp!, {lr}
-	/*apunta a los arreglo*/
+	/*apunta a los arreglos*/
 	ldr r8, =vector1
 	ldr r9, =vector2
 	ldr r10, =vector3
@@ -18,17 +18,24 @@ tituloMostrar:
 	ldr r0, =titulo
 	bl puts
 tableroMostrar:
-	/*muestra el tablero*/
+	/*muestra el tablero inicial*/
 	ldr r0, =tablero1
 	bl puts
 	add r5, r5, #1
 	cmp r5, #5
 	bne tableroMostrar
-turno:
+turno1:
 	ldr r0, =espacio
 	bl puts
 
-	ldr r0, =jugador
+	ldr r0, =jugador1
+	bl puts
+
+turno2:
+	ldr r, =espacio
+	bl puts
+
+	ldr r0, =jugador2
 	bl puts
 
 ingreso_columna:
@@ -241,6 +248,7 @@ fila:     .asciz "Ingrese el numero de fila:"
 columna:  .asciz "Ingrese el numero de columna:"
 mostrarV: .asciz "VECTOR >>>"
 tablero1: .asciz "[0][0][0][0][0]"
-jugador:  .asciz ">>>>>>>>>>>>>>>   TURNO    <<<<<<<<<<<<<<<"
+jugador1:  .asciz ">>>>>>>>>>>>>>>   TURNO J1    <<<<<<<<<<<<<<<"
+jugador2:  .asciz ">>>>>>>>>>>>>>>   TURNO J2    <<<<<<<<<<<<<<<"
 titulo:   .asciz ">>>>>>>>>>>>>>>    GO     <<<<<<<<<<<<<<<"
 espacio:  .asciz " "
