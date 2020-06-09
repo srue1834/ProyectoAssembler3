@@ -15,7 +15,7 @@ main:
 	/*contador*/
 	mov r5, #0 
 tableroMostrar:
-	/*muestra el tablero inicial*/
+	/*muestra el tablero*/
 	ldr r0, =tablero1
 	bl puts
 	add r5, r5, #1
@@ -181,12 +181,14 @@ mostrar:
 	bne mostrar
 
 	bl ingreso_columna
-
 /*salida*/
 	mov r0, #0
 	mov r3, #0
 	ldmfd sp!, {lr}
 	bx lr
+
+
+	
 
 /*datos*/
 .data
