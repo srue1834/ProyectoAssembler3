@@ -37,8 +37,6 @@ CF:
     cmpeq r11, #2
     beq TC2
 
-    bl fin
-
     DC1:
         mov r8, #1
         mov r9, #1
@@ -56,6 +54,8 @@ CF:
         mov r8, #2
         mov r9, #2
         mov r10, #2
+
+    bl fin
 
     fin:
     mov pc, lr
