@@ -24,6 +24,8 @@ tableroMostrar:
 	add r5, r5, #1
 	cmp r5, #5
 	bne tableroMostrar
+	
+	/*turno del jugador 1 */
 turno1:
 	ldr r0, =espacio
 	bl puts
@@ -31,6 +33,7 @@ turno1:
 	ldr r0, =jugador1
 	bl puts
 
+/*turno del jugador 2 */
 turno2:
 	ldr r, =espacio
 	bl puts
