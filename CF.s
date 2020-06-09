@@ -27,6 +27,14 @@ CF:
     cmpeq r11, #1  /*Se compara el valor de la ultima ficha */
     beq TC1  /*de ser así, se ejecuta TC1 */
 
+    cmp r8, #1
+    cmpeq r10, #1
+    moveq r9, #1
+
+    cmp r8, #1
+    cmpeq r11, #1
+    beq DCM1
+
     cmp r7, #2
     cmpeq r9, #2
     moveq r8, #2
@@ -39,6 +47,14 @@ CF:
     cmpeq r11, #2
     beq TC2
 
+    cmp r8, #2
+    cmpeq r10, #2
+    moveq r9, #2
+
+    cmp r8, #2
+    cmpeq r11, #2
+    beq DCM2
+
     /*Convierte dos fichas a la del jugador 1 */
     DC1:
         mov r8, #1
@@ -49,6 +65,16 @@ CF:
         mov r8, #1
         mov r9, #1
         mov r10, #1
+
+    /*convierte dos fichas que esten a la mitad del tablero, jugador 1*/
+    DCM1: 
+        mov r9, #1
+        mov r10, #1
+    
+/*convierte dos fichas que esten a la mitad del tablero, jugador 1*/
+    DCM2: 
+        mov r9, #2
+        mov r10, #2
 
     /*Convierte dos fichas a las del jugador 2 */
     DC2:
