@@ -14,6 +14,9 @@ main:
 
 	/*contador*/
 	mov r5, #0 
+tituloMostrar:
+	ldr r0, =titulo
+	bl puts
 tableroMostrar:
 	/*muestra el tablero*/
 	ldr r0, =tablero1
@@ -21,6 +24,12 @@ tableroMostrar:
 	add r5, r5, #1
 	cmp r5, #5
 	bne tableroMostrar
+turno:
+	ldr r0, =espacio
+	bl puts
+
+	ldr r0, =jugador
+	bl puts
 
 ingreso_columna:
 	/*el usuario ingresa la columna en donde quiere ingresar la ficha*/
@@ -232,3 +241,6 @@ fila:     .asciz "Ingrese el numero de fila:"
 columna:  .asciz "Ingrese el numero de columna:"
 mostrarV: .asciz "VECTOR >>>"
 tablero1: .asciz "[0][0][0][0][0]"
+jugador:  .asciz ">>>>>>>>>>>>>>>   TURNO    <<<<<<<<<<<<<<<"
+titulo:   .asciz ">>>>>>>>>>>>>>>    GO     <<<<<<<<<<<<<<<"
+espacio:  .asciz " "
