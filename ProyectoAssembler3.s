@@ -114,7 +114,11 @@ fila1:
 
 	ldr r5, =vector1
 	mov r7, #5
+	push {r7, r8, r9, r10, r11}
+	bl CF
+	pop{r7, r8, r9, r10, r11}
 	bl mostrar
+
 fila2:
 	/*accede a la segunda fila*/
 	add r5, r5, #1
@@ -128,6 +132,9 @@ fila2:
 
 	ldr r5, =vector2
 	mov r7, #5
+	push {r7, r8, r9, r10, r11}
+	bl CF
+	pop{r7, r8, r9, r10, r11}
 	bl mostrar
 fila3:
 	/*accede a la tercera fila*/
@@ -142,6 +149,9 @@ fila3:
 
 	ldr r5, =vector3
 	mov r7, #5
+	push {r7, r8, r9, r10, r11}
+	bl CF
+	pop{r7, r8, r9, r10, r11}	
 	bl mostrar
 fila4:
 	/*accede a la cuarta fila*/
@@ -156,6 +166,9 @@ fila4:
 
 	ldr r5, =vector4
 	mov r7, #5
+	push {r7, r8, r9, r10, r11}
+	bl CF
+	pop{r7, r8, r9, r10, r11}	
 	bl mostrar
 fila5:
 	/*accede a la quinta fila*/
@@ -170,6 +183,9 @@ fila5:
 
 	ldr r5, =vector5
 	mov r7, #5
+	push {r7, r8, r9, r10, r11}
+	bl CF
+	pop{r7, r8, r9, r10, r11}
 	bl mostrar
 
 mostrar:
